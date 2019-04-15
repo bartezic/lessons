@@ -15,3 +15,12 @@ You can use any modules, frameworks, instruments which you likes, you can use Re
 
 As a result we should have page similar to this:
 ![Test task screen example](https://elopay-me-prod.s3.amazonaws.com/media_files/attachments/000/001/267/original/b345842159.jpg?1555152042)
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
