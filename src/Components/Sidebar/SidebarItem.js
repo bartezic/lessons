@@ -5,17 +5,19 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import SidebarButton from "./SidebarButton";
 
 const SidebarItem = ({children, isCategory, name, selectLesson}) => {
-  const [open, handleOpen] = useState(false);
+  const [open, toggleOpen] = useState(false);
+
+  const handleClick = isCategory ? () => toggleOpen(!open) : () => selectLesson(name);
 
   return (
     <Fragment>
       <SidebarButton
         name={name}
-        handleClick={isCategory ? handleOpen : selectLesson}
+        handleClick={handleClick}
       >
-        {!isCategory && open ? <ExpandLess /> : <ExpandMore />}
+        {isCategory && open ? <ExpandLess /> : <ExpandMore />}
       </SidebarButton>
-      {!isCategory && (
+      {isCategory && (
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             {children.map(item => (
@@ -25,6 +27,7 @@ const SidebarItem = ({children, isCategory, name, selectLesson}) => {
                 isCategory={item.isCategory}
                 key={item.id}
                 name={item.name}
+                selectLesson={selectLesson}
               />
             ))}
           </List>
