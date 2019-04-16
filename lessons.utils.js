@@ -1,3 +1,0 @@
-export const checkIfPrevQuizzesEnabled = (lessons, lessonId) => {
-  return ....
-}
