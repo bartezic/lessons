@@ -11,6 +11,7 @@ const App = ({classes, lessons}) => {
   return (
     <div className="App">
       <Sidebar
+        classes={classes}
         items={lessons}
         selectLesson={selectLesson}
       />
