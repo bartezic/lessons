@@ -4,8 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {LESSONS} from "./lessons.constants";
+import {recursiveEnhanceData} from "./lessons.utils";
 
-ReactDOM.render(<App lessons={LESSONS}/>, document.getElementById('root'));
+const enhancedLessons = recursiveEnhanceData(LESSONS);
+
+ReactDOM.render(<App lessons={enhancedLessons}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

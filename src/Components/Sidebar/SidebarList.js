@@ -10,6 +10,7 @@ export default ({items, selectLesson}) => (
         children={item.children}
         isCategory={item.isCategory}
         key={item.id}
+        locked={item.locked}
         name={item.name}
         selectLesson={selectLesson}
       />
